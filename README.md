@@ -1,16 +1,10 @@
-# plant_app
+# Greener
 
-A new Flutter project.
+Greener is an app for you to buy a various plant for your interior.
 
-## Getting Started
+# Notes
 
-This project is a starting point for a Flutter application.
+This app is a dummy app for portfolio purpose, UI/UX designed by Paolo Spazzini
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Check out his works at:
+https://dribbble.com/shots/4569970-Plant-Freebie-2-Dribbble-Invites
