@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../core/consts/element/provider.dart';
 import '../../core/consts/element/widget.dart';
-import '../../core/service/authenticator.dart';
+import 'model/page_landingModel.dart';
 
 class PageLandingView extends StatelessWidget {
   @override
@@ -10,24 +9,20 @@ class PageLandingView extends StatelessWidget {
     return Scaffold(
       appBar: customAppBar(
           context, null, withButton(context, "Browse", Icon(Icons.settings))),
-      body: Center(
-        child: Column(
-          children: [
-            RaisedButton(
-              onPressed: () async {
-                try {
-                  AuthService authService = Provider.of(context).authService;
-                  await authService.signOut(context);
-                  print("Signed Out");
-                } catch (e) {
-                  print(e);
-                }
-              },
-              child: Text(
-                "Sign Out",
-              ),
-            )
-          ],
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: GridView.builder(
+          itemCount: categories.length,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            crossAxisSpacing: 20,
+            mainAxisSpacing: 20,
+            childAspectRatio: 0.75,
+          ),
+          itemBuilder: (context, index) => ElCarde(
+            landingCategory: categories[index],
+            press: () {},
+          ),
         ),
       ),
     );
