@@ -28,7 +28,7 @@ class _PageLandingViewState extends State<PageLandingView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: customAppBar(
-          context, null, withButton(context, _title, Icon(Icons.settings))),
+          context, withButton(context, _title, Icon(Icons.settings))),
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         elevation: 8,
@@ -38,6 +38,7 @@ class _PageLandingViewState extends State<PageLandingView> {
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
+            // ignore: deprecated_member_use
             title: Text(
               "Browse",
               style: TextStyle(
@@ -48,6 +49,7 @@ class _PageLandingViewState extends State<PageLandingView> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.explore),
+            // ignore: deprecated_member_use
             title: Text(
               "Explore",
               style: TextStyle(

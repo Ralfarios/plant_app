@@ -16,7 +16,6 @@ class _PageSettingsViewState extends State<PageSettingsView> {
     return Scaffold(
       appBar: customAppBar(
         context,
-        backArrow(context),
         withoutButton(context, "Settings"),
       ),
       body: ListView(

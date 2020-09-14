@@ -16,32 +16,27 @@ Widget defaultAppBar(BuildContext context, Widget itemApp) {
 
 //WIDGET: Custom App Bar
 
-Widget customAppBar(BuildContext context, Widget navApp, Widget itemApp) {
+Widget customAppBar(BuildContext context, Widget itemApp) {
   return PreferredSize(
     preferredSize: Size.fromHeight(120),
     child: AppBar(
-      backgroundColor: Colors.transparent,
-      elevation: 0,
-      brightness: Brightness.light,
-      leading: Container(
-        margin: EdgeInsets.only(top: 8),
-        child: navApp,
-      ),
-      flexibleSpace: itemApp,
-    ),
-  );
-}
-
-Widget backArrow(BuildContext context) {
-  return Padding(
-    padding: const EdgeInsets.only(left: 8.0),
-    child: InkWell(
-      customBorder: CircleBorder(),
-      child: Image(image: images.icBackArrow),
-      onTap: () {
-        Navigator.pop(context);
-      },
-    ),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        brightness: Brightness.light,
+        leading: Container(
+          margin: EdgeInsets.only(top: 8),
+          child: Padding(
+            padding: const EdgeInsets.only(left: 8.0),
+            child: InkWell(
+              customBorder: CircleBorder(),
+              child: Image(image: images.icBackArrow),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+          ),
+        ),
+        flexibleSpace: itemApp),
   );
 }
 

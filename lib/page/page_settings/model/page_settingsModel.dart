@@ -2,12 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:gradient_text/gradient_text.dart';
 
-import 'package:provider/provider.dart';
-
 import 'page_settingsModelWidgets.dart';
 import '../../../core/consts/style/color.dart';
 import '../../../core/consts/style/theme.dart';
-import '../../../core/service/authenticator.dart';
 
 class SetEmail extends StatefulWidget {
   @override
@@ -49,9 +46,9 @@ class _SetEmailState extends State<SetEmail> {
               FlatButton(
                 onPressed: () async {
                   try {
-                    AuthService authService = Provider.of(context).authService;
-                    await authService.signOut(context);
-                    print("Signed Out");
+                    await FirebaseAuth.instance.signOut().then((_) =>
+                        Navigator.pushNamedAndRemoveUntil(context, "/landing",
+                            ModalRoute.withName("/landhome")));
                   } catch (e) {
                     print(e);
                   }
