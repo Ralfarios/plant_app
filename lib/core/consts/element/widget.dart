@@ -19,49 +19,49 @@ Widget defaultAppBar(BuildContext context, Widget itemApp) {
 Widget customAppBar(BuildContext context, Widget itemApp) {
   return PreferredSize(
     preferredSize: Size.fromHeight(120),
-    child: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        brightness: Brightness.light,
-        leading: Container(
-          margin: EdgeInsets.only(top: 8),
-          child: Padding(
-            padding: const EdgeInsets.only(left: 8.0),
-            child: InkWell(
-              customBorder: CircleBorder(),
-              child: Image(image: images.icBackArrow),
-              onTap: () {
-                Navigator.pop(context);
-              },
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        AppBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          brightness: Brightness.light,
+          leading: Container(
+            margin: EdgeInsets.only(top: 8),
+            child: Padding(
+              padding: const EdgeInsets.only(left: 8.0),
+              child: InkWell(
+                customBorder: CircleBorder(),
+                child: Image(image: images.icBackArrow),
+                onTap: () {
+                  Navigator.pop(context);
+                },
+              ),
             ),
           ),
         ),
-        flexibleSpace: itemApp),
+        itemApp,
+      ],
+    ),
   );
 }
 
 Widget withButton(context, string, icon) {
-  return Stack(
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
     children: [
-      Positioned(
-        bottom: 0,
-        child: Container(
-          margin: EdgeInsets.all(20),
-          child: Text(string, style: Theme.of(context).textTheme.headline1),
-        ),
+      Container(
+        margin: EdgeInsets.fromLTRB(20, 20, 20, 13),
+        child: Text(string, style: Theme.of(context).textTheme.headline1),
       ),
-      Positioned(
-        bottom: 0,
-        right: 0,
-        child: Container(
-          margin: EdgeInsets.fromLTRB(20, 20, 30, 20),
-          child: InkWell(
-            customBorder: CircleBorder(),
-            child: icon,
-            onTap: () {
-              Navigator.pushNamed(context, '/settings');
-            },
-          ),
+      Container(
+        margin: EdgeInsets.fromLTRB(20, 20, 30, 13),
+        child: InkWell(
+          customBorder: CircleBorder(),
+          child: icon,
+          onTap: () {
+            Navigator.pushNamed(context, '/settings');
+          },
         ),
       ),
     ],
@@ -69,15 +69,11 @@ Widget withButton(context, string, icon) {
 }
 
 Widget withoutButton(context, string) {
-  return Positioned(
-    bottom: 0,
-    child: Container(
-      margin: EdgeInsets.all(20),
-      child: Row(
-        children: <Widget>[
-          Text(string, style: Theme.of(context).textTheme.headline1),
-        ],
-      ),
+  return Container(
+    margin: EdgeInsets.fromLTRB(20, 20, 30, 13),
+    child: Text(
+      string,
+      style: Theme.of(context).textTheme.headline1,
     ),
   );
 }
