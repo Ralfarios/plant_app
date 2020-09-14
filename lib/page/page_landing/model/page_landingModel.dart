@@ -55,13 +55,13 @@ class ElCarde extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      //borderRadius: BorderRadius.circular(16),
+    return InkWell(
+      borderRadius: BorderRadius.circular(16),
       onTap: press,
       child: Container(
         padding: EdgeInsets.all(20),
         decoration: BoxDecoration(
-          color: Colors.amber,
+          color: Colors.transparent,
           borderRadius: BorderRadius.circular(16),
         ),
         child: Column(
@@ -72,7 +72,7 @@ class ElCarde extends StatelessWidget {
               padding: const EdgeInsets.only(top: 16, bottom: 4),
               child: Text(landingCategory.name,
                   style: Theme.of(context).textTheme.bodyText1.copyWith(
-                      color: cBlack, fontWeight: FontLight, fontSize: 14)),
+                      color: cBlack, fontWeight: FontMedium, fontSize: 14)),
             ),
             Text(landingCategory.prodSum.toString() + " products",
                 style: Theme.of(context).textTheme.bodyText1.copyWith(

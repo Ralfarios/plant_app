@@ -17,7 +17,7 @@ class PageLandingView extends StatelessWidget {
             crossAxisCount: 2,
             crossAxisSpacing: 20,
             mainAxisSpacing: 20,
-            childAspectRatio: 0.75,
+            childAspectRatio: 1.15,
           ),
           itemBuilder: (context, index) => ElCarde(
             landingCategory: categories[index],
