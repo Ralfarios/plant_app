@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "797510862438",
+    "firebase_url": "https://greener-19d66.firebaseio.com",
+    "project_id": "greener-19d66",
+    "storage_bucket": "greener-19d66.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:797510862438:android:ae75a515b062b51af68fa7",
+        "android_client_info": {
+          "package_name": "com.muamaralfarabi.plant_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "797510862438-db4k0h1a9sbnk2stg01ibq5pb8lucsrm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnc5RYPInfjOFa24r6UEdpw7Z7ZhBub0g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "797510862438-db4k0h1a9sbnk2stg01ibq5pb8lucsrm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
