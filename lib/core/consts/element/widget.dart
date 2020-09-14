@@ -5,17 +5,18 @@ import '../path/image.dart' as images;
 
 //WIDGET: Default App Bar
 
-Widget defaultAppBar() {
+Widget defaultAppBar(BuildContext context, Widget itemApp) {
   return AppBar(
     backgroundColor: Colors.transparent,
     elevation: 0.0,
     brightness: Brightness.light,
+    flexibleSpace: itemApp,
   );
 }
 
 //WIDGET: Custom App Bar
 
-Widget customAppBar(BuildContext context, Widget itemApp) {
+Widget customAppBar(BuildContext context, Widget navApp, Widget itemApp) {
   return PreferredSize(
     preferredSize: Size.fromHeight(120),
     child: AppBar(
@@ -24,19 +25,51 @@ Widget customAppBar(BuildContext context, Widget itemApp) {
       brightness: Brightness.light,
       leading: Container(
         margin: EdgeInsets.only(top: 8),
-        child: Padding(
-          padding: const EdgeInsets.only(left: 8.0),
+        child: navApp,
+      ),
+      flexibleSpace: itemApp,
+    ),
+  );
+}
+
+Widget backArrow(BuildContext context) {
+  return Padding(
+    padding: const EdgeInsets.only(left: 8.0),
+    child: InkWell(
+      customBorder: CircleBorder(),
+      child: Image(image: images.icBackArrow),
+      onTap: () {
+        Navigator.pop(context);
+      },
+    ),
+  );
+}
+
+Widget withButton(context, string, icon) {
+  return Stack(
+    children: [
+      Positioned(
+        bottom: 0,
+        child: Container(
+          margin: EdgeInsets.all(20),
+          child: Text(string, style: Theme.of(context).textTheme.headline1),
+        ),
+      ),
+      Positioned(
+        bottom: 0,
+        right: 0,
+        child: Container(
+          margin: EdgeInsets.fromLTRB(20, 20, 30, 20),
           child: InkWell(
             customBorder: CircleBorder(),
-            child: Image(image: images.icBackArrow),
+            child: icon,
             onTap: () {
-              Navigator.pop(context);
+              Navigator.pushNamed(context, '/settings');
             },
           ),
         ),
       ),
-      flexibleSpace: itemApp,
-    ),
+    ],
   );
 }
 

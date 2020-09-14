@@ -158,6 +158,7 @@ class _PageSignUpViewState extends State<PageSignUpView> {
 
     return customAppBar(
       context,
+      backArrow(context),
       withoutButton(context, _appBarText),
     );
   }

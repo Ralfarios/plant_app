@@ -15,7 +15,7 @@ class PageWelcomeView extends StatelessWidget {
     //CONTENT
 
     return Scaffold(
-      appBar: defaultAppBar(),
+      appBar: defaultAppBar(context, null),
       body: Center(
         child: ListView(
           physics: BouncingScrollPhysics(),

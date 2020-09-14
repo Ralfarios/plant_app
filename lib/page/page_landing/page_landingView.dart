@@ -8,13 +8,11 @@ class PageLandingView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: defaultAppBar(),
+      appBar: customAppBar(
+          context, null, withButton(context, "Browse", Icon(Icons.settings))),
       body: Center(
         child: Column(
           children: [
-            Text("This is PageLandingView",
-                style: Theme.of(context).textTheme.headline1),
-            SizedBox(height: 32),
             RaisedButton(
               onPressed: () async {
                 try {

@@ -6,6 +6,7 @@ import 'consts/style/theme.dart';
 import 'service/authenticator.dart';
 
 import '../page/page_landing/page_landingView.dart';
+import '../page/page_settings/page_settingsView.dart';
 import '../page/page_signUp/page_signUpView.dart';
 import '../page/page_welcome/page_welcomeView.dart';
 
@@ -25,6 +26,7 @@ class PlantApp extends StatelessWidget {
           '/signIn': (context) => PageSignUpView(fieldType: FieldType.signIn),
           '/landing': (context) => HomeController(),
           '/landhome': (context) => PageLandingView(),
+          '/settings': (context) => PageSettingsView(),
         },
       ),
     );
